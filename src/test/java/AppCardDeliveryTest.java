@@ -23,8 +23,9 @@ public class AppCardDeliveryTest {
         String planningDate = generateDate(days);
         String selectAll = Keys.chord(Keys.COMMAND, "a");
         $("[data-test-id='date'] input").click();
-        $("[data-test-id='date'] input").sendKeys(selectAll);
+        $("[data-test-id='date'] input").shouldBe(visible).sendKeys(selectAll);
         $("[data-test-id='date'] input").sendKeys(Keys.DELETE);
+
         $("[data-test-id='date'] input").sendKeys(planningDate);
 
         $("[data-test-id='name'] input").setValue("Марина Зинченко-Петрова");
